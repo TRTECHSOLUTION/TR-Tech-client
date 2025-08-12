@@ -1,0 +1,26 @@
+.submission-categories {
+
+    .box {
+        border: 1px solid #e0e0e0;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 10px;
+
+        h4 {
+            font-size: 16px;
+            padding-top: 10px;
+        }
+
+        p {
+
+            font-size: 13px;
+        }
+
+        .point {
+            p {
+                color: $primary-color;
+            }
+        }
+    }
+
+}
