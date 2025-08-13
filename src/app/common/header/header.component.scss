@@ -1,22 +1,5 @@
 $primary-color: #0072ff;
 
-h2,
-h3,
-h4,
-h1,
-b {
-    font-family: 'Libre Bodoni', serif;
-}
-
-p {
-    font-family: 'Fira Sans', sans-serif;
-    color: #555565;
-}
-
-.space {
-    padding: 40px 0px;
-}
-
 .start {
     display: flex;
 
@@ -42,8 +25,19 @@ p {
 
     .navbar-nav {
         .nav-item {
+            padding-right: var(--bs-navbar-nav-link-padding-x);
+            padding-left: var(--bs-navbar-nav-link-padding-x);
+
             .nav-link {
                 color: #000;
+            }
+
+            .active {
+                color: $primary-color !important;
+                font-weight: bold;
+                border-bottom: 2px solid $primary-color;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }
@@ -102,7 +96,7 @@ p {
             list-style-type: none;
 
             .head {
-                background-image: url(file:///C:/Users/DELL/Desktop/trtech-solutions/images/tags.png);
+                background-image: url(./../../../assets/tags.png);
                 background-size: 100% 100%;
                 padding: 10px 20px 10px 10px;
                 color: $primary-color;
@@ -116,23 +110,5 @@ p {
             }
         }
 
-    }
-}
-
-.banner {
-    img {
-        width: 100%;
-    }
-
-    .socio {
-        float: right;
-        margin-top: -10%;
-        z-index: 999;
-        position: relative;
-        margin-right: 2%;
-
-        img {
-            width: 100%;
-        }
     }
 }
