@@ -1,0 +1,142 @@
+$primary-color: #0072ff;
+
+.services {
+    .box {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 10px;
+        border-radius: 10px;
+
+        h4 {
+            font-size: 16px;
+            padding-top: 10px;
+        }
+
+        p {
+
+            font-size: 13px;
+        }
+
+        .point {
+            p {
+                color: #000;
+            }
+        }
+    }
+}
+
+.showcase {
+    hr {
+        margin: 0;
+    }
+
+
+
+    .nav {
+        li {
+            .nav-link.active {
+                color: $primary-color;
+                border: none;
+                border-bottom: 2px solid $primary-color;
+            }
+
+            .nav-link {
+                color: #70717e;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .tab-content {
+        border: none !important;
+
+        .tab-pane {
+            .box {
+                border: 1px solid #e0e0e0;
+                border-radius: 10px;
+
+                img {
+                    width: 100%;
+                }
+
+                .text {
+                    padding: 10px;
+
+                    h5 {
+                        font-size: 14px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                .view {
+                    font-size: 13px;
+                    text-decoration: none;
+                    color: #fff;
+
+                    b {
+                        font-weight: 600;
+                    }
+
+                    img {
+                        width: auto;
+                    }
+
+                    margin-right: 10px;
+                    padding: 5px 8px;
+                    border: 1px solid $primary-color;
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    align-items: center;
+                }
+
+                .show {
+
+                    font-size: 13px;
+                    text-decoration: none;
+                    color: $primary-color;
+
+                    b {
+                        font-weight: 600;
+                    }
+
+                    img {
+                        width: auto;
+                    }
+
+                    padding: 5px 8px;
+                    border: 1px solid $primary-color;
+                    // background-color: $primary-color;
+                    border-radius: 5px;
+                    align-items: center;
+
+                }
+            }
+        }
+    }
+}
+
+.impact {
+    .box {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 10px;
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        b {
+            margin-left: 15px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 0px;
+            font-weight: 500;
+        }
+    }
+}
