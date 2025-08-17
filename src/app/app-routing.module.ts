@@ -9,6 +9,8 @@ import { WorkshopComponent } from './components/workshop/workshop.component';
 import { InternshipComponent } from './components/internship/internship.component';
 import { EmbeddedComponent } from './components/embedded/embedded.component';
 import { StartProjectComponent } from './components/start-project/start-project.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'intership', component: InternshipComponent },
   { path: 'embedded', component: EmbeddedComponent },
   { path: 'start-project-now', component: StartProjectComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'achievements', component: AchievementsComponent },
 ];
 
 @NgModule({

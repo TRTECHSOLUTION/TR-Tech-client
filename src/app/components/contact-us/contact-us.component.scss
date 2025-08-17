@@ -1,0 +1,36 @@
+$primary-color: #0072ff;
+
+.text {
+    text-align: center;
+
+    .box {
+        border: 1px solid #ededed;
+        border-radius: 10px;
+        padding-top: 20px;
+        height: 100%;
+
+        img {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.view {
+    font-size: 13px;
+    text-decoration: none;
+    color: #fff;
+
+    img {
+        width: auto;
+    }
+
+    padding: 5px 8px;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+    border-radius: 5px;
+    align-items: center;
+}
+
+iframe {
+    border-radius: 10px;
+}

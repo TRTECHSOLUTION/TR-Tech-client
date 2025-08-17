@@ -51,15 +51,19 @@ $primary-color: #0072ff;
             }
 
             .box {
+                border: 1px solid #e0e0ee;
+                padding: 10px;
+                border-radius: 10px;
+
+                b {
+                    font-weight: 600;
+                    margin-left: 15px;
+                }
 
                 .view {
                     font-size: 13px;
                     text-decoration: none;
                     color: #fff;
-
-                    b {
-                        font-weight: 600;
-                    }
 
                     img {
                         width: auto;
@@ -71,6 +75,29 @@ $primary-color: #0072ff;
                     border-radius: 5px;
                     align-items: center;
                 }
+            }
+
+            .for {
+                .card {
+                    max-width: 800px;
+                    margin: auto;
+                    border-radius: 1.2rem;
+                    background: #fff;
+
+                    h4 {
+                        font-size: 1.25rem;
+                        color: #333;
+                    }
+
+                     
+
+                    .btn {
+                        font-weight: 600;
+                        font-size: 1rem;
+                        padding: 0.6rem 2rem;
+                    }
+                }
+
             }
         }
     }

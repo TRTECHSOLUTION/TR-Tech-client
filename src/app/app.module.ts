@@ -14,6 +14,8 @@ import { WorkshopComponent } from './components/workshop/workshop.component';
 import { InternshipComponent } from './components/internship/internship.component';
 import { EmbeddedComponent } from './components/embedded/embedded.component';
 import { StartProjectComponent } from './components/start-project/start-project.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { StartProjectComponent } from './components/start-project/start-project.
     WorkshopComponent,
     InternshipComponent,
     EmbeddedComponent,
-    StartProjectComponent
+    StartProjectComponent,
+    ContactUsComponent,
+    AchievementsComponent
   ],
   imports: [
     BrowserModule,
