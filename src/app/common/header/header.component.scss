@@ -73,6 +73,7 @@ $primary-color: #0072ff;
         a {
             text-decoration: none;
             color: #fff;
+            cursor: pointer;
         }
 
         b {
@@ -112,5 +113,106 @@ $primary-color: #0072ff;
             }
         }
 
+    }
+}
+
+.modal {
+    .modal-dialog {
+        max-width: 55% !important;
+    }
+
+    .modal-body {
+        padding: 0px;
+
+        img {
+            width: 100%;
+            border-radius: 6px 0px 0px 6px;
+        }
+
+        // .col-md-6 {
+        //     padding-left: 0px;
+        //     padding-right: 0px;
+        // }
+        .btn-close {
+            float: right;
+            padding: 15px;
+        }
+    }
+
+    .callback-form {
+        background: #fff;
+        border-radius: 12px;
+        padding-right: 20px;
+        padding-top: 20px;
+        // box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        font-family: Arial, sans-serif;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+
+            label {
+                font-size: 14px;
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+
+            input,
+            select,
+            textarea {
+                width: 100%;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 14px;
+            }
+
+            textarea {
+                min-height: 80px;
+                resize: none;
+            }
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 5px;
+
+            select {
+                width: 80px;
+            }
+
+            input {
+                flex: 1;
+            }
+        }
+
+        .start {
+            display: flex;
+
+            img {
+                width: auto;
+            }
+
+            b {
+                font-weight: 600;
+                color: #fff;
+            }
+
+            width: 100%;
+            justify-content: center;
+            margin: 0px;
+            padding: 5px 8px;
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            border-radius: 5px;
+            align-items: center;
+        }
     }
 }
