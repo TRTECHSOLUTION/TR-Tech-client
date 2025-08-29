@@ -4,7 +4,7 @@ name: Angular Build and Deploy
 on:
   push:
     branches:
-      - master # or your preferred branch
+      - main # or your preferred branch
 
 
 jobs:
