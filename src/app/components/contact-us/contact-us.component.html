@@ -56,7 +56,7 @@
                 <h2>
                     Send Us a Message
                 </h2>
-                <form class="p-4 rounded shadow-sm bg-white">
+                <!-- <form class="p-4 rounded shadow-sm bg-white">
                    
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name*</label>
@@ -89,7 +89,53 @@
                         </button>
                     </div>
 
+                </form> -->
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="p-4 rounded shadow-sm bg-white">
+
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name*</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name"
+                            formControlName="username">
+                        <div *ngIf="submitted && contactForm.controls['username'].errors" class="text-danger">
+                            Name is required.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contactNumber" class="form-label">Contact Number*</label>
+                        <div class="input-group">
+                            <span class="input-group-text">🇮🇳 +91</span>
+                            <input type="tel" class="form-control" id="contactNumber" placeholder="Enter phone number"
+                                formControlName="contactnumber">
+                        </div>
+                        <div *ngIf="submitted && contactForm.controls['contactnumber'].errors" class="text-danger">
+                            Enter a valid 10-digit number.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email ID*</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                            formControlName="email">
+                        <div *ngIf="submitted && contactForm.controls['email'].errors" class="text-danger">
+                            Enter a valid email address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Type message here"
+                            formControlName="message"></textarea>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary px-4 view">
+                            Send Message
+                            <img src="assets/pointer.png" alt="">
+                        </button>
+                    </div>
                 </form>
+
             </div>
             <div class="col-md-6">
                 <iframe
