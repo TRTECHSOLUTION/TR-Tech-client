@@ -54,6 +54,7 @@ $primary-color: #0072ff;
                 border: 1px solid #e0e0ee;
                 padding: 10px;
                 border-radius: 10px;
+                cursor: pointer;
 
                 b {
                     font-weight: 600;
@@ -77,6 +78,14 @@ $primary-color: #0072ff;
                 }
             }
 
+            .active-box {
+                background-color: $primary-color;
+
+                b {
+                    color: #fff;
+                }
+            }
+
             .for {
                 .card {
                     max-width: 800px;
@@ -89,7 +98,7 @@ $primary-color: #0072ff;
                         color: #333;
                     }
 
-                     
+
 
                     .btn {
                         font-weight: 600;

@@ -83,28 +83,29 @@
     </div>
 </div>
 <div class="space img">
-    <div class="container-fluid">
-        <h2>Workshop Moments</h2>
-        <p>
-            Snapshots from our hands-on sessions across campuses and tech hubs.
-        </p>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="assets/achievements-img-1.png" alt="">
+    <div class="container-fluid" *ngFor="let type of groupedData | keyvalue">
+        <h2>{{ type.key }}</h2>
 
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let item of type.value">
+                <!-- <img src="assets/achievements-img-1.png" alt=""> -->
+                <img [src]="item.imageurl" alt="{{ type.key }}" class="img-fluid mb-3">
+                <p class="text-center">
+                    <b><i>"{{ item.smallDescription }}"</i></b>
+                </p>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <img src="assets/achievements-img-2.png" alt="">
 
             </div>
             <div class="col-md-4">
                 <img src="assets/achievements-img-3.png" alt="">
 
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
-<div class="space img">
+<!-- <div class="space img">
     <div class="container-fluid">
         <h2>Student Project Highlights</h2>
         <p>
@@ -147,4 +148,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
