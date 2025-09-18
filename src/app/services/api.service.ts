@@ -14,4 +14,10 @@ export class ApiService {
   registerProject(payload: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/registerproject`, payload);
   }
+  getAchievements() {
+    return this.http.get(`${this.baseUrl}/achievements`);
+  }
+  postProjectDevelopment(formData: FormData) {
+    return this.http.post(`${this.baseUrl}/projectdevelopment`, formData);
+  }
 }
