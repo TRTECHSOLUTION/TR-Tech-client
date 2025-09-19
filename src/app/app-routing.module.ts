@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'paper-publishing', component: PaperPublishingComponent },
-  { path: 'b-tech-projects', component: BTechProjectsComponent },
+  { path: ':category-projects', component: BTechProjectsComponent },
   { path: 'brief-project', component: BriefProjectComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'intership', component: InternshipComponent },

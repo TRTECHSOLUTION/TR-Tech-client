@@ -139,7 +139,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="text">
-          <ul class="list-inline">
+          <!-- <ul class="list-inline">
             <li class="list-inline-item head">Projects</li>
             <li class="list-inline-item">
               M.Tech
@@ -153,7 +153,52 @@
             </li>
             <li class="list-inline-item">PHD</li>
             <li class="list-inline-item">Degree</li>
+          </ul> -->
+          <ul class="list-inline mb-0" (mouseleave)="activeIndex = null">
+            <li class="list-inline-item head">Projects</li>
+
+            <!-- loading spinner -->
+            <li class="list-inline-item" *ngIf="loading">
+              <div class="spinner-border spinner-border-sm ms-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </li>
+
+            <!-- error -->
+            <li class="list-inline-item text-danger" *ngIf="error">{{ error }}</li>
+
+            <!-- dynamic categories with dropdown types -->
+            <li *ngFor="let cat of categories; let i = index" class="list-inline-item dropdown"
+              [class.show]="activeIndex === i" (mouseenter)="activeIndex = i" (mouseleave)="activeIndex = null">
+              <!-- close when mouse leaves -->
+
+              <!-- toggle link (click also toggles) -->
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                (click)="toggleDropdown(i); $event.preventDefault()" [attr.aria-expanded]="activeIndex === i">
+                {{ cat.category }}
+              </a>
+
+              <!-- dropdown menu -->
+              <ul class="dropdown-menu" [class.show]="activeIndex === i">
+                <li *ngFor="let t of cat.types">
+                  <a class="dropdown-item" href="#" (click)="selectType(cat.category, t.type); $event.preventDefault()">
+                    {{ t.type }}
+                  </a>
+                </li>
+                <li *ngIf="!cat.types || cat.types.length === 0" class="px-3 py-2 text-muted">
+                  No types found
+                </li>
+              </ul>
+            </li>
+
+            <!-- fallback: if API empty, optionally show static links -->
+            <!-- <li class="list-inline-item" *ngIf="!loading && categories.length === 0">M.Tech</li>
+            <li class="list-inline-item"><a class="nav-link" routerLink="b-tech-projects"
+                routerLinkActive="active">B.Tech</a></li>
+            <li class="list-inline-item">PHD</li>
+            <li class="list-inline-item">Degree</li> -->
           </ul>
+
         </div>
       </div>
       <div class="col-md-4">
