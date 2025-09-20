@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
@@ -9,21 +9,35 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./b-tech-projects.component.scss']
 })
 export class BTechProjectsComponent implements OnInit {
-  category: string = '';
   projects: any[] = [];
 
-  constructor(private http: HttpClient, private route: ActivatedRoute,private api: ApiService,) { }
+  constructor(private route: ActivatedRoute, private api: ApiService,) { }
 
-  ngOnInit() {
-    // Get category name from route param
+  ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.category = params.get('category') || '';
+      const categoryPath = params.get('category-projects'); // like "phd-projects"
+      const category = categoryPath?.replace('-projects', ''); // "phd"
 
-      // Call API (replace with your API URL)
-      this.http.get<any>('https://api.trtechy.com/api/addproject').subscribe(res => {
-        // Example structure:
-        // res = { categories: [], types: [], projects: [] }
-        this.projects = res.projects.filter((p: any) => p.category === this.category);
+      this.route.queryParamMap.subscribe(query => {
+        const type = query.get('type'); // "CSE"
+
+        this.api.getProjects().subscribe((res: any) => {
+          if (res.success) {
+            // find category first
+            const cat = res.data.find((c: any) =>
+              c.category.toLowerCase() === category?.toLowerCase()
+            );
+
+            if (cat) {
+              // find type inside category
+              const typeData = cat.types.find((t: any) =>
+                t.type.toLowerCase() === type?.toLowerCase()
+              );
+
+              this.projects = typeData ? typeData.projects : [];
+            }
+          }
+        });
       });
     });
   }

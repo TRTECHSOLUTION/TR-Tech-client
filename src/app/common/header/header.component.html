@@ -170,18 +170,17 @@
             <!-- dynamic categories with dropdown types -->
             <li *ngFor="let cat of categories; let i = index" class="list-inline-item dropdown"
               [class.show]="activeIndex === i" (mouseenter)="activeIndex = i" (mouseleave)="activeIndex = null">
-              <!-- close when mouse leaves -->
 
-              <!-- toggle link (click also toggles) -->
               <a class="nav-link dropdown-toggle" href="#" role="button"
                 (click)="toggleDropdown(i); $event.preventDefault()" [attr.aria-expanded]="activeIndex === i">
                 {{ cat.category }}
               </a>
 
-              <!-- dropdown menu -->
               <ul class="dropdown-menu" [class.show]="activeIndex === i">
                 <li *ngFor="let t of cat.types">
-                  <a class="dropdown-item" href="#" (click)="selectType(cat.category, t.type); $event.preventDefault()">
+                  <!-- navigate with routerLink -->
+                  <a class="dropdown-item" [routerLink]="['/', cat.category.toLowerCase() + '-projects']"
+                    [queryParams]="{ type: t.type }">
                     {{ t.type }}
                   </a>
                 </li>
