@@ -17,14 +17,15 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'paper-publishing', component: PaperPublishingComponent },
-  { path: ':category-projects', component: BTechProjectsComponent },
+  { path: 'achievements', component: AchievementsComponent },
   { path: 'brief-project', component: BriefProjectComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'intership', component: InternshipComponent },
   { path: 'embedded', component: EmbeddedComponent },
   { path: 'start-project-now', component: StartProjectComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'achievements', component: AchievementsComponent },
+  { path: ':category-projects', component: BTechProjectsComponent },
+
 ];
 
 @NgModule({
